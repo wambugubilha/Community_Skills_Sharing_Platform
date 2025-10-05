@@ -3,7 +3,7 @@ This project aims at building a platform where the community can come together a
 
 # User authentication and profile models
 Features
-Custom User model with email login (no username).
-Auto-created Profile (bio, location).
-Token Authentication via rest_framework.authtoken.
-Endpoints: register, login, logout, view/update profile.
+-Custom User model with email login (no username).
+-Auto-created Profile (bio, location).
+-Token Authentication via rest_framework.authtoken.
+-Endpoints: register, login, logout, view/update profile.
