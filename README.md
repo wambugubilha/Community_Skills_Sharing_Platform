@@ -1,28 +1,5 @@
 # Community_Skills_Sharing_Platform
 This project aims at building a platform where the community can come together and share the skills milestones they  have made to build reputable careers.
-<<<<<<< HEAD
-# Skills App (CRUD)
-Implement a Skill model linked to the user.
-Each skill includes title, description, category, and creation date.
-Added full CRUD API endpoints using Django REST Framework.
-# Endpoints 
-GET /api/skills/ → List all skills
-
-POST /api/skills/ → Create skill
-
-GET /api/skills/{id}/ → Retrieve skill
-
-PUT /api/skills/{id}/ → Update skill
-
-DELETE /api/skills/{id}/ → Delete skill
-# Messaging App
-Created a Message model for user-to-user communication.
-Each message stores sender, receiver, text, and timestamp.
-Implemented API endpoints for sending and viewing messages
-# Endpoints
-GET /api/messages/ → View inbox/sent messages
-POST /api/messages/ → Send message
-=======
 
 # User authentication and profile models
 Features
@@ -30,4 +7,20 @@ Features
 -Auto-created Profile (bio, location).
 -Token Authentication via rest_framework.authtoken.
 -Endpoints: register, login, logout, view/update profile.
->>>>>>> 95a7311cafe0ae53681e3b7b329819e0bc3cbadc
+
+# Skill Listings (CRUD)
+Implemented full CRUD functionality for the Skill model.
+Added endpoints for creating, viewing, updating, and deleting skill posts.
+Integrated category and user relationships for better data organization.
+Finalized database schema and ran migrations successfully.
+
+# Messaging System
+Developed direct messaging between users using the Message model.
+Created REST API endpoints for sending and retrieving messages.
+Added serializers and views to ensure secure, user-to-user communication.
+
+#  Feedback System
+Introduced a text-based feedback feature for user interactions.
+Linked Feedback model to users (from_user → to_user) for transparency.
+Implemented API endpoints for submitting and viewing feedback.
+Conducted feature testing to validate messaging and feedback reliability.

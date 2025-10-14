@@ -22,6 +22,6 @@ urlpatterns = [
     path("api/accounts/", include("accounts.urls")),
     path("api/skills/", include("skills.urls")),
     path("api/messages/", include("messaging.urls")),
-
+    path("api/feedback/", include("feedback.urls")),
 
 ]

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "accounts",
     "skills",
     "messaging",
+    "feedback",
 ]
 
 AUTH_USER_MODEL = "accounts.User"
