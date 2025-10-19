@@ -9,7 +9,7 @@ User = get_user_model()
 
 class FeedbackListCreateView(generics.ListCreateAPIView):
     serializer_class = FeedbackSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
         # allow user to see feedback they received or gave
@@ -28,7 +28,7 @@ class FeedbackListCreateView(generics.ListCreateAPIView):
 
 class FeedbackDetailView(generics.RetrieveDestroyAPIView):
     serializer_class = FeedbackSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
         # user can only view/delete feedback they gave or received

@@ -1,19 +1,27 @@
+# Dockerfile
 FROM python:3.11-slim
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# Set work directory
+WORKDIR /app
 
-WORKDIR /code
+# Environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-RUN apt-get update && apt-get install -y gcc default-libmysqlclient-dev build-essential
+# Install system dependencies for MySQL
+RUN apt-get update && apt-get install -y gcc default-libmysqlclient-dev pkg-config
 
-COPY requirements.txt /code/
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+# Copy dependency list first (for better caching)
+COPY requirements.txt /app/
 
-COPY . /code/
+# Install Python dependencies
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# collect static if any (skip if not configured)
-# RUN python manage.py collectstatic --noinput
+# Copy entire project
+COPY . /app/
 
-CMD ["gunicorn", "community.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Expose Django’s port
+EXPOSE 8000
+
+# Run server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

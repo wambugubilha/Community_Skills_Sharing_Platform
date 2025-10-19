@@ -4,7 +4,7 @@ from .serializers import SkillSerializer
 
 class SkillListCreateView(generics.ListCreateAPIView):
     serializer_class = SkillSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
         return Skill.objects.all()
@@ -14,5 +14,5 @@ class SkillListCreateView(generics.ListCreateAPIView):
 
 class SkillDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = SkillSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     queryset = Skill.objects.all()
